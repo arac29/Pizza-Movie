@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pizza Movie Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            
+            <strong>Pizza->Movie</strong>
+          </a>
+
+
+          </button>
+        </div>
+      </div>
+
+  </div>
+</header>
+
+
+<main role="main">
+   
+<!--           SECTION WITH OPTIONS             -->
+  <section class="jumbotron text-center">
+      <div class="container">
+          <h1 class="jumbotron-heading">Pizza Movie</h1>
+          <p class="lead text-muted">Welcome to the Pizza-Movie Matcher. Got your food but still no idea what to watch... Let us recommend a movie that goes with your pizza!</p>
+            <p> 
+            <button onclick="show_form()" class="btn btn-primary my-2"> Build your pizza</button>
+            <p class="lead text-muted"> or  </p>
+            <button onclick="popular()" class="btn btn-primary my-2"> Popular pizza list </button>
+          </p>
+      </div><br><br>
+ <!--             SHOW PRE SELECTED PIZZAS         -->
+ 
+  <div class="album py-5 bg-light collapse" name='pre-selected' id='pre-selected' >
+      
+      <div class="container">
+  
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                  <a href="#"><image width="100%" height="100%" href="/images/pepperoni.png"></image></a>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title>
+                <a href="#"><image width="100%" height="100%" href="/images/plain1.jpeg"></image></a>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <a href="#"><image width="100%" height="100%" href="/images/veggie.png"></image></a>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+  
+        
+        </div>
+      </div>
+    </div>
+    <script>
+      function popular() {
+        var x = document.getElementById("pre-selected");
+        
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        document.getElementById("input_form").style.display="none";
+        } else {
+        x.style.display = "none";
+        }
+      }
+    </script>
+<!-- BUILD YOUR OWN FORMULARIO  -->
+<div class="collapse" id="input_form">
+  <br>
+  <hr class="mb-4">
+    <h3 class="mb-4">Detail your pizza here! </h3>
+    <form class="needs-validation" action = "/" novalidate="" method="POST">
+
+        <!---------------     DROPDOWN 1  crust   ----------------->
+        <div class="mb-4">
+          <label for="country">Crust</label>
+          <select class="custom-select d-block mb-4 "  id="crust" required="">
+            <option value="">Choose...</option>
+            <option>Deep Dish </option>
+            <option>Flatbread</option>
+            <option>Gluten Free</option>
+            <option>Hand Tossed</option>
+            <option>Pan</option>
+            <option>Sicilian</option>
+            <option>Staffed</option>
+            <option>Thin</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid crust.
+          </div>
+        </div>
+        <!---------------     DROPDOWN 2  cheese   ----------------->
+        <div class="mb-4">
+            <label for="country">Cheese</label>
+            <select class="custom-select d-block mb-4 " id="crust" required="">
+              <option value="">Choose...</option>
+              <option>Cheddar</option>
+              <option>Mozzarella</option>
+              <option>Ricotta</option>
+              <option>Provolone</option>
+              <option>Parmesan</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid cheese.
+            </div>
+          </div>
+        <!---------------     DROPDOWN 3  sauce   ----------------->
+        <div class="mb-4">
+            <label for="country">Sauce</label>
+            <select class="custom-select d-block mb-4 " id="crust" required="">
+              <option value="">Choose...</option>
+              <option>Alfredo</option>
+              <option>Barbeque</option>
+              <option>Berchamel (white)</option>
+              <option>Marinara</option>
+              <option>Pesto</option>
+              <option>Spicy Marinara</option>
+              <option>Ranch</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+        <!---------------    CHECKBOXES toppings   ----------------->
+      <hr class="mb-4">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="none">
+        <label class="custom-control-label" for="none">None</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="pepperoni">
+        <label class="custom-control-label" for="pepperoni">Pepperoni</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="sausage">
+          <label class="custom-control-label" for="sausage">Sausage</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="pineapple">
+            <label class="custom-control-label" for="pineapple">Pineapple</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="ham">
+          <label class="custom-control-label" for="ham">Ham</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="bacon">
+        <label class="custom-control-label" for="bacon">Bacon</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="mushrooms">
+          <label class="custom-control-label" for="mushrooms">Mushrooms</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="greenpepper">
+          <label class="custom-control-label" for="greenpepper">Green Pepper</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="onions">
+          <label class="custom-control-label" for="onions">Onions</label>
+       </div>
+       <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="chicken">
+          <label class="custom-control-label" for="chicken">Chicken</label>
+        </div>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="beef">
+          <label class="custom-control-label" for="beef">Beef</label>
+        </div>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="jalapeno">
+          <label class="custom-control-label" for="jalapeno">Jalapeno</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="spinach">
+          <label class="custom-control-label" for="spinach">Spinach</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="anchovy">
+          <label class="custom-control-label" for="anchovy">Anchovy</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="artichoke">
+        <label class="custom-control-label" for="artichoke">Artichoke</label>
+      </div>
+
+      
+      <hr class="mb-4">
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Tell me the movies!</button>
+    </form>
+  </div>
+  <script>
+    function show_form() {
+        var t = document.getElementById("input_form");
+        if (t.style.display === "none") {
+        t.style.display = "block";
+        document.getElementById("pre-selected").style.display="none";
+        } else {
+        t.style.display = "none";
+        }
+      }
+  </script>
+  </section>
+</main>
+<body>
+</body>
+</html>
